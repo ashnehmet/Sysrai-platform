@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific - temporary/generated files
+temp_clips/
+!temp_clips/README.md
+output_videos/
+!output_videos/README.md
+character_references/
+!character_references/README.md
+input_books/
+!input_books/README.md
+book_epubs/
+!book_epubs/README.md
+REFERENCE/
+*.log
+
+# Video pipeline database files (but include structure docs)
+video_scripts.db
+
+# Include these important project files for video pipeline
+!chapter_progress.json
+!character_database.json
+!templates/
+
+# Keep important project docs
+!Sysrai project documents/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Deployment
+*.pem
+*.key
+*.crt

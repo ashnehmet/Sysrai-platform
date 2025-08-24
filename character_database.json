@@ -1,0 +1,99 @@
+{
+  "Martina": {
+    "description": "The main protagonist of my book called Martina. She is slightly autistic in that she is cold and to-the-point. She has suffered multiple traumas, although later she warms up and is especially loving and caring to her new 'family members. Physically she is very attractive, strong and athletic. She is a matial arts expert, black-belt and beyond. She is also a military trained sharpshooter. She is vey confident fighting. She has a determination to fight injustice. She rarely dresses 'pretty' always functional and ready for a fight.",
+    "image_path": "character_references\\martina.png",
+    "appearance_count": 1
+  },
+  "Arthur Vance": {
+    "description": "A man in his late 50s with a weathered face, resembling a roadmap of past failures. He wears a worn trench coat that has seen better decades, with a somber expression reflecting years of experience.",
+    "image_path": "character_references\\character_Arthur Vance.png"
+  },
+  "Maya": {
+    "description": "A young woman with wide, anxious eyes and tousled hair. She wears a simple outfit, clutching a file tightly in her hands, her body language revealing her nervousness and urgency.",
+    "image_path": "character_references\\character_Maya.png"
+  },
+  "Yusuf Al-Hassan": {
+    "description": "A determined man in his early 30s with short black hair and a rugged beard. He wears a simple black jacket and jeans, giving him a relatable and approachable look.",
+    "image_path": "character_references\\yusuf_al-hassan.png",
+    "created_date": "2025-08-13T13:36:26.002362",
+    "appearance_count": 1
+  },
+  "Yusuf Ahmed": {
+    "description": "A determined man in his early 30s, with dark hair, wearing a fitted black jacket over a dark green t-shirt and jeans. He has piercing brown eyes and a look of urgency.",
+    "image_path": "character_references\\yusuf_ahmed.png",
+    "created_date": "2025-08-13T14:24:01.466012",
+    "appearance_count": 1
+  },
+  "Sara Elmasri": {
+    "description": "Yusuf's supportive sister, late 20s, with long curly hair tied back, wearing a cozy beige sweater and denim shorts. She has warm brown eyes and an empathetic smile.",
+    "image_path": "character_references\\sara_elmasri.png",
+    "created_date": "2025-08-13T14:24:36.811465",
+    "appearance_count": 1
+  },
+  "The Familiar Terrorist": {
+    "description": "A shadowy figure wearing a black hoodie, partially obscured by darkness, with only their eyes visible, conveying a sense of menace.",
+    "image_path": "character_references\\the_familiar_terrorist.png",
+    "created_date": "2025-08-13T14:25:05.495472",
+    "appearance_count": 1
+  },
+  "General Friedrich M\u00fcller": {
+    "description": "A stern-looking man in a German military uniform, with graying hair and a heavy brow. He has a determined expression, embodying the weight of leadership.",
+    "image_path": "character_references\\general_friedrich_m\u00fcller.png",
+    "created_date": "2025-08-13T14:33:42.815521",
+    "appearance_count": 2
+  },
+  "Agent Sarah Thompson": {
+    "description": "A sharp, young American intelligence officer, dressed in a smart casual outfit with a practical jacket. She has short hair and an analytical gaze, always on the lookout for signs of trouble.",
+    "image_path": "character_references\\agent_sarah_thompson.png",
+    "created_date": "2025-08-13T14:34:15.720512",
+    "appearance_count": 2
+  },
+  "Rabbi David Cohen": {
+    "description": "An elderly, wise-looking man with a long beard, wearing traditional Jewish attire. He has a gentle demeanor but carries a heavy heart, symbolizing the struggles of his people.",
+    "image_path": "character_references\\rabbi_david_cohen.png",
+    "created_date": "2025-08-13T14:34:52.210591",
+    "appearance_count": 1
+  },
+  "Sara Al-Hassan": {
+    "description": "A determined woman in her late 30s, wearing a stylish, modest dress with a colorful scarf. Her hair is shoulder-length and she has a confident demeanor.",
+    "image_path": "character_references\\sara_al-hassan.png",
+    "created_date": "2025-08-13T14:45:45.297149",
+    "appearance_count": 1
+  },
+  "Laila Farouk": {
+    "description": "A compassionate woman in her early 40s, dressed in a smart blazer with a subtle floral pattern. She has short curly hair and wears glasses, giving her a thoughtful appearance.",
+    "image_path": "character_references\\laila_farouk.png",
+    "created_date": "2025-08-13T14:46:18.297000",
+    "appearance_count": 1
+  },
+  "Fatima Noor": {
+    "description": "A passionate woman in her late 20s, wearing a vibrant traditional dress with modern accessories. She has long hair tied back and radiates energy and enthusiasm.",
+    "image_path": "character_references\\fatima_noor.png",
+    "created_date": "2025-08-13T14:46:58.414556",
+    "appearance_count": 1
+  },
+  "Rosa": {
+    "description": "A young woman in her early 20s, with long wavy brown hair, wearing a glamorous but worn-out red dress. She has expressive eyes that reveal her dreams of freedom.",
+    "image_path": "character_references\\rosa.png",
+    "created_date": "2025-08-13T15:08:50.891538",
+    "appearance_count": 1
+  },
+  "Marco": {
+    "description": "A man in his early 30s with a scruffy beard, wearing a dirty white shirt and jeans. He has a menacing demeanor, showcasing his aggressive personality.",
+    "image_path": "character_references\\marco.png",
+    "created_date": "2025-08-13T15:09:24.408658",
+    "appearance_count": 1
+  },
+  "Hilda": {
+    "description": "A woman in her late 20s, with straight black hair and a stylish but tattered blue dress. She has a vibrant smile that contrasts with her surroundings.",
+    "image_path": "character_references\\hilda.png",
+    "created_date": "2025-08-13T15:09:59.814212",
+    "appearance_count": 1
+  },
+  "Helena": {
+    "description": "A woman in her mid-20s, with curly blonde hair, wearing a flashy yet shabby green dress. She exudes a sense of hope despite her circumstances.",
+    "image_path": "character_references\\helena.png",
+    "created_date": "2025-08-13T15:10:35.409605",
+    "appearance_count": 1
+  }
+}
