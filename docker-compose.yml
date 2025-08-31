@@ -1,0 +1,110 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: sysrai-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sysrai_db}
+      POSTGRES_USER: ${POSTGRES_USER:-sysrai}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - sysrai_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-sysrai}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: sysrai-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - sysrai_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Main Application
+  web:
+    build: .
+    container_name: sysrai-web
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${POSTGRES_USER:-sysrai}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-sysrai_db}
+      REDIS_URL: redis://redis:6379/0
+      
+      # API Keys
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      RUNPOD_API_KEY: ${RUNPOD_API_KEY}
+      RUNPOD_SKYREELS_ENDPOINT: ${RUNPOD_SKYREELS_ENDPOINT}
+      RUNPOD_POD_ID: ${RUNPOD_POD_ID}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      
+      # JWT & Security
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      
+      # Storage (using local volumes instead of DO Spaces)
+      STORAGE_PATH: /app/uploads
+      VIDEO_OUTPUT_PATH: /app/videos
+      TEMP_PATH: /app/temp
+      
+      # Application
+      ENVIRONMENT: ${ENVIRONMENT:-production}
+      DEBUG: ${DEBUG:-false}
+    volumes:
+      - uploads:/app/uploads
+      - videos:/app/videos
+      - temp:/app/temp
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - sysrai_network
+    labels:
+      # Coolify labels for automatic SSL and routing
+      - "coolify.domain=${DOMAIN}"
+      - "coolify.port=8000"
+      - "coolify.ssl=true"
+
+  # Database migrations
+  migrate:
+    build: .
+    container_name: sysrai-migrate
+    command: alembic upgrade head
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-sysrai}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-sysrai_db}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - sysrai_network
+    restart: "no"
+
+networks:
+  sysrai_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  uploads:
+  videos:
+  temp:

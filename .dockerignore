@@ -1,0 +1,82 @@
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+old/
+old scripts/
+temp_clips/
+output_videos/
+character_references/*.png
+character_references/*.jpg
+input_books/*.epub
+book_epubs/*.epub
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# Documentation (not needed in container)
+*.md
+!README.md
+docs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+tests/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Environment files (will be provided by Coolify)
+.env
+.env.*
+
+# Temporary files
+*.tmp
+*.bak
+nul
+
+# Media files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Deployment scripts (not needed in container)
+deploy_*.sh
+setup_*.sh
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+*.ipynb

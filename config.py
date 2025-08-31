@@ -16,10 +16,10 @@ class Settings(BaseSettings):
     environment: str = "production"
     
     # Database
-    database_url: str = "sqlite:///./sysrai.db"
+    database_url: str = os.getenv("DATABASE_URL", "sqlite:///./sysrai.db")
     
     # Redis
-    redis_url: str = "redis://localhost:6379"
+    redis_url: str = os.getenv("REDIS_URL", "redis://localhost:6379")
     
     # JWT Authentication
     jwt_secret_key: str = "change-this-secret-key"
@@ -36,12 +36,17 @@ class Settings(BaseSettings):
     runpod_skyreels_endpoint: str = ""
     runpod_pod_id: str = ""
     
-    # Digital Ocean Spaces
-    do_spaces_key: str = ""
-    do_spaces_secret: str = ""
-    do_spaces_bucket: str = "sysrai-videos"
-    do_spaces_region: str = "nyc3"
-    do_spaces_endpoint: str = "https://nyc3.digitaloceanspaces.com"
+    # Storage Paths (for containerized environment)
+    storage_path: str = os.getenv("STORAGE_PATH", "/app/uploads")
+    video_output_path: str = os.getenv("VIDEO_OUTPUT_PATH", "/app/videos")
+    temp_path: str = os.getenv("TEMP_PATH", "/app/temp")
+    
+    # S3-compatible storage (optional - can use Hetzner Object Storage)
+    s3_access_key: str = ""
+    s3_secret_key: str = ""
+    s3_bucket: str = "sysrai-videos"
+    s3_region: str = "fsn1"
+    s3_endpoint: str = ""  # Will be set if using Hetzner Object Storage
     
     # Email
     email_api_key: str = ""
